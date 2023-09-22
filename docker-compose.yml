@@ -13,3 +13,11 @@ services:
       - ./data/web/media:/data/web/media/
     env_file:
       - ./dotenv_files/.env
+
+  psql:
+    container_name: psql
+    image: postgres:13-alpine
+    volumes:
+      - ./data/postgres/data:/var/lib/postgresql/data/
+    env_file:
+      - ./dotenv_files/.env
